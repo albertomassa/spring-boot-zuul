@@ -3,3 +3,16 @@ server:
   port: 80
   servlet:
     context-path: /spring-zuul
+
+# ===============================
+# = ZUUL_ROUTES
+# ===============================
+zuul:
+  host:
+    connect-timeout-millis: 40000
+    socket-timeout-millis: 80000
+  ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
+  routes:
+    test-zuul:
+      path: /test-zuul/**
+      url: http://www.google.it
